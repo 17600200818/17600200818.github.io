@@ -156,6 +156,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-控制ajax次数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/控制ajax次数/">控制事件触发ajax次数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/29/控制ajax次数/" class="archive-article-date">
+  	<time datetime="2019-04-29T03:16:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><blockquote>
+<p>做了一个按键精灵，当触发change事件的时候就访问ajax，这样就会导致每输入一个字都会触发一次ajax，这样就会有很多次不必要请求</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><blockquote>
+<p>控制固定时长内虽然多次触发change但是只触发一次ajax请求，每次触发请求延时固定时间，并且将现在请求参数和之前请求参数做对比，参数相等才请求ajax。这样来实现控制请求ajax次数，代码示例如下。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetch</span>(<span class="params">value, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    timeout = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  currentValue = value;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fake</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> str = querystring.encode(&#123;</span><br><span class="line">      code: <span class="string">'utf-8'</span>,</span><br><span class="line">      q: value,</span><br><span class="line">    &#125;);</span><br><span class="line">    jsonp(<span class="string">`https://suggest.taobao.com/sug?<span class="subst">$&#123;str&#125;</span>`</span>)</span><br><span class="line">      .then(<span class="function"><span class="params">response</span> =&gt;</span> response.json())</span><br><span class="line">      .then(<span class="function">(<span class="params">d</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (currentValue === value) &#123;</span><br><span class="line">          <span class="keyword">const</span> result = d.result;</span><br><span class="line">          <span class="keyword">const</span> data = [];</span><br><span class="line">          result.forEach(<span class="function">(<span class="params">r</span>) =&gt;</span> &#123;</span><br><span class="line">            data.push(&#123;</span><br><span class="line">              value: r[<span class="number">0</span>],</span><br><span class="line">              text: r[<span class="number">0</span>],</span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;);</span><br><span class="line">          callback(data);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  timeout = setTimeout(fake, <span class="number">300</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/29/控制ajax次数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
