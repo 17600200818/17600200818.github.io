@@ -156,6 +156,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-processCount" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/processCount/">crontab定时守护常驻进程脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/05/processCount/" class="archive-article-date">
+  	<time datetime="2019-06-05T06:33:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="守护进程脚本"><a href="#守护进程脚本" class="headerlink" title="守护进程脚本"></a>守护进程脚本</h1><blockquote>
+<p>常驻进程经常需要一个定时脚本来守护进程，在意外结束脚本的时候来重启常驻进程，以下方法为crontab定时执行.sh守护进程脚本来达成守护常驻进程的目的。</p>
+</blockquote>
+<p>###sh脚本示例<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#~/bin/bash</span></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br><span class="line"><span class="built_in">source</span> /root/.bash_profile</span><br><span class="line"></span><br><span class="line">newProcessCount=`ps -ef|grep <span class="string">"adUpdate.php"</span> | grep -v <span class="string">"grep"</span> | wc -l`</span><br><span class="line">nowData=`date + <span class="string">'%Y%m%d'</span>`</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$newsProcessCount</span> -lt 1 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"/var/www/html/web/flashcms/cron/ad"</span></span><br><span class="line">nohup /usr/<span class="built_in">local</span>/bin/php adUpdate.php &gt;&gt; /tmp/adUpdate<span class="variable">$nowDate</span>.txt &amp;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"create adUpdate.php"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/05/processCount/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-urls" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -644,11 +710,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">urls</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">urls</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
