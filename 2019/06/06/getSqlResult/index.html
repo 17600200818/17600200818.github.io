@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>getSqlResult | YTY</title>
+  <title>爬虫小记-爬取sql查询平台sql执行结果 | YTY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
+  <meta name="description" content="背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存在csrf的值，在抓取之前先爬取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="getSqlResult">
+<meta property="og:title" content="爬虫小记-爬取sql查询平台sql执行结果">
 <meta property="og:url" content="http://yoursite.com/2019/06/06/getSqlResult/index.html">
 <meta property="og:site_name" content="YTY">
-<meta property="og:description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
+<meta property="og:description" content="背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存在csrf的值，在抓取之前先爬取">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-06T13:34:08.415Z">
+<meta property="og:updated_time" content="2019-06-06T13:39:02.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="getSqlResult">
-<meta name="twitter:description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
+<meta name="twitter:title" content="爬虫小记-爬取sql查询平台sql执行结果">
+<meta name="twitter:description" content="背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存在csrf的值，在抓取之前先爬取">
   
     <link rel="alternative" href="/atom.xml" title="YTY" type="application/atom+xml">
   
@@ -165,20 +165,20 @@
         
   
     <h1 class="article-title" itemprop="name">
-      getSqlResult
+      爬虫小记-爬取sql查询平台sql执行结果
     </h1>
   
 
         
         <a href="/2019/06/06/getSqlResult/" class="archive-article-date">
-  	<time datetime="2019-06-06T13:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
+  	<time datetime="2019-06-06T13:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="爬取sql查询平台sql执行结果"><a href="#爬取sql查询平台sql执行结果" class="headerlink" title="爬取sql查询平台sql执行结果"></a>爬取sql查询平台sql执行结果</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
 <p>因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理</p>
 </blockquote>
 <h3 id="整个过程遇到的问题"><a href="#整个过程遇到的问题" class="headerlink" title="整个过程遇到的问题"></a>整个过程遇到的问题</h3><h4 id="1-登陆cookie问题"><a href="#1-登陆cookie问题" class="headerlink" title="1.登陆cookie问题"></a>1.登陆cookie问题</h4><p>网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可</p>
