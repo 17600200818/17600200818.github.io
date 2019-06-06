@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/6 | YTY</title>
+  <title>getSqlResult | YTY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YTY">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="getSqlResult">
+<meta property="og:url" content="http://yoursite.com/2019/06/06/getSqlResult/index.html">
 <meta property="og:site_name" content="YTY">
+<meta property="og:description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-06T13:34:08.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YTY">
+<meta name="twitter:title" content="getSqlResult">
+<meta name="twitter:description" content="爬取sql查询平台sql执行结果背景 因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理  整个过程遇到的问题1.登陆cookie问题网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可 2.csrf跨站请求限制因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存">
   
     <link rel="alternative" href="/atom.xml" title="YTY" type="application/atom+xml">
   
@@ -154,76 +158,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-getSqlResult" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      getSqlResult
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/06/getSqlResult/" class="archive-article-date">
+
+        
+        <a href="/2019/06/06/getSqlResult/" class="archive-article-date">
   	<time datetime="2019-06-06T13:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/06/getSqlResult/">getSqlResult</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="爬取sql查询平台sql执行结果"><a href="#爬取sql查询平台sql执行结果" class="headerlink" title="爬取sql查询平台sql执行结果"></a>爬取sql查询平台sql执行结果</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理</p>
+</blockquote>
+<h3 id="整个过程遇到的问题"><a href="#整个过程遇到的问题" class="headerlink" title="整个过程遇到的问题"></a>整个过程遇到的问题</h3><h4 id="1-登陆cookie问题"><a href="#1-登陆cookie问题" class="headerlink" title="1.登陆cookie问题"></a>1.登陆cookie问题</h4><p>网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可</p>
+<h4 id="2-csrf跨站请求限制"><a href="#2-csrf跨站请求限制" class="headerlink" title="2.csrf跨站请求限制"></a>2.csrf跨站请求限制</h4><p>因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存在csrf的值，在抓取之前先爬取一下网页的内容，然后根据正则来筛选出来csrf_token在下次请求访问接口的时候带上即可</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>编写爬取代码之前先用抓包工具或者postman来访问，预估问题解决后再开动<br>抓取网页前需要认真分析需要的接口参数，没有线索可以去js文件或者网页源代码中找，多尝试用工具调试api，网页爬虫一般都比较容易</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/06/getSqlResult/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/05/processCount/" class="archive-article-date">
-  	<time datetime="2019-06-05T06:33:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/05/processCount/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">crontab定时守护常驻进程脚本</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/05/processCount/">crontab定时守护常驻进程脚本</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -246,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

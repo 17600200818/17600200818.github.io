@@ -156,6 +156,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-getSqlResult" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/06/getSqlResult/">getSqlResult</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/06/getSqlResult/" class="archive-article-date">
+  	<time datetime="2019-06-06T13:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="爬取sql查询平台sql执行结果"><a href="#爬取sql查询平台sql执行结果" class="headerlink" title="爬取sql查询平台sql执行结果"></a>爬取sql查询平台sql执行结果</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>因为外部门有一个sql查询平台，需要做一个工具直接运行sql后取得csv数据，因为不能在外部门平台上开发，即爬取外部门网站运行sql后的结果自己做处理</p>
+</blockquote>
+<h3 id="整个过程遇到的问题"><a href="#整个过程遇到的问题" class="headerlink" title="整个过程遇到的问题"></a>整个过程遇到的问题</h3><h4 id="1-登陆cookie问题"><a href="#1-登陆cookie问题" class="headerlink" title="1.登陆cookie问题"></a>1.登陆cookie问题</h4><p>网站登陆一次后一直使用一个cookie，所以在请求头中加入cookie即可</p>
+<h4 id="2-csrf跨站请求限制"><a href="#2-csrf跨站请求限制" class="headerlink" title="2.csrf跨站请求限制"></a>2.csrf跨站请求限制</h4><p>因为网站采用了csrf验证限制，所以在请求网站的时候网站源码中会存在csrf的值，在抓取之前先爬取一下网页的内容，然后根据正则来筛选出来csrf_token在下次请求访问接口的时候带上即可</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>编写爬取代码之前先用抓包工具或者postman来访问，预估问题解决后再开动<br>抓取网页前需要认真分析需要的接口参数，没有线索可以去js文件或者网页源代码中找，多尝试用工具调试api，网页爬虫一般都比较容易</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/06/getSqlResult/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-processCount" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
