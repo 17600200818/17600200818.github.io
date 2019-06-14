@@ -156,6 +156,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/14/sql/">sql语句使用记录</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/14/sql/" class="archive-article-date">
+  	<time datetime="2019-06-14T10:35:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ql语句记录<br>写了一天sql，把一些之前用不到的sql语法记录下来，以免下次用去现查</p>
+<blockquote>
+<p>字段<br>contat 拼接字段或字符串<br>substr() 截取字符串或某个字段</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">concat('sns_live_p_', msg_id)</span><br><span class="line">substr(out_time, 1, 10)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>时间操作<br>now() 获取当前时间   格式为 Y-m-d H:i:s<br>date_sub() 对时间进行运算<br>date_format() 对时间进行格式化</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date_format(date_sub(now(), interval 2 day), '%y-%m-%d')</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>case when then else end 示例</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">case when seq = 1 then 1 </span><br><span class="line">	when seq = 0 then 100</span><br><span class="line">	else seq <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>生成临时表</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> (</span><br><span class="line">	<span class="keyword">select</span> <span class="number">1</span> user_id, <span class="string">'aaa'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">	<span class="keyword">select</span> <span class="number">2</span> user_id, <span class="string">'bbb'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">	<span class="keyword">select</span> <span class="number">3</span> user_id, <span class="string">'ccc'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>梯形求和<br>场景：有一个每天的收入表，以日期为单位列出每个天手里算上这天之前的所有天的总和</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.date,a.money,<span class="keyword">SUM</span>(lt.money)  <span class="keyword">as</span> cum</span><br><span class="line"><span class="keyword">FROM</span> cum_demo a <span class="keyword">JOIN</span> cum_demo lt</span><br><span class="line"><span class="keyword">ON</span> a.date&gt;= lt.date</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.date</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> a.date</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编写长的sql文件需要注意的事项<br>1:某些需要过滤的内容或者需要预先处理的字段最好在最底层的sql就给处理掉。因为放在外层处理可能会在某个块遗忘掉处理</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/14/sql/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-getSqlResult" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -778,11 +864,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">urls</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">urls</a>
               </li>
             
             <div class="clearfix"></div>
