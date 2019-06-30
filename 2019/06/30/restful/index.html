@@ -6,24 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue组件间通讯 | YTY</title>
+  <title>restful | YTY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="父组件向子组件传递数据 通过设置标签的属性传递数据，在子组件用props接受。例如下面这样，父组件parent.vue引入子组件child.vue，将父组件的数据name通过设置标签child的name属性传递给子组件，子组件通过props传递接受，接受后，在子组件内this.name就是父组件的name数据。  子组件向父组件传递数据 1.发布订阅 发布 emit 订阅 on{}2.on订阅，e">
-<meta name="keywords" content="vue">
+  <meta name="description" content="api的restful设计原则crud和get post put delete对应关系  c =》 get     查r =》 post    增u =》 put     更新d =》 delete  删除  ####例子创建用户  /user  method post201  创建成功400 请求错误500 服务器内部错误  用户登陆  /user/:username post200    ok">
+<meta name="keywords" content="api">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue组件间通讯">
-<meta property="og:url" content="http://yoursite.com/2019/04/28/vue组件中通讯/index.html">
+<meta property="og:title" content="restful">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/restful/index.html">
 <meta property="og:site_name" content="YTY">
-<meta property="og:description" content="父组件向子组件传递数据 通过设置标签的属性传递数据，在子组件用props接受。例如下面这样，父组件parent.vue引入子组件child.vue，将父组件的数据name通过设置标签child的name属性传递给子组件，子组件通过props传递接受，接受后，在子组件内this.name就是父组件的name数据。  子组件向父组件传递数据 1.发布订阅 发布 emit 订阅 on{}2.on订阅，e">
+<meta property="og:description" content="api的restful设计原则crud和get post put delete对应关系  c =》 get     查r =》 post    增u =》 put     更新d =》 delete  删除  ####例子创建用户  /user  method post201  创建成功400 请求错误500 服务器内部错误  用户登陆  /user/:username post200    ok">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2051579444,1975337901&fm=173&app=49&f=JPEG?w=640&h=336&s=E6F855CADEA1B364427D94190100C0C2">
-<meta property="og:image" content="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2133644502,896555523&fm=173&app=49&f=JPEG?w=640&h=344&s=DAB851CA1BE1B76C1EC9BC16030010C2">
-<meta property="og:image" content="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2041020946,1230706412&fm=173&app=49&f=JPEG?w=640&h=449&s=DEB651CADAEC836C1EC50C17010080C1">
-<meta property="og:updated_time" content="2019-04-29T02:44:10.462Z">
+<meta property="og:updated_time" content="2019-06-30T13:03:14.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue组件间通讯">
-<meta name="twitter:description" content="父组件向子组件传递数据 通过设置标签的属性传递数据，在子组件用props接受。例如下面这样，父组件parent.vue引入子组件child.vue，将父组件的数据name通过设置标签child的name属性传递给子组件，子组件通过props传递接受，接受后，在子组件内this.name就是父组件的name数据。  子组件向父组件传递数据 1.发布订阅 发布 emit 订阅 on{}2.on订阅，e">
-<meta name="twitter:image" content="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2051579444,1975337901&fm=173&app=49&f=JPEG?w=640&h=336&s=E6F855CADEA1B364427D94190100C0C2">
+<meta name="twitter:title" content="restful">
+<meta name="twitter:description" content="api的restful设计原则crud和get post put delete对应关系  c =》 get     查r =》 post    增u =》 put     更新d =》 delete  删除  ####例子创建用户  /user  method post201  创建成功400 请求错误500 服务器内部错误  用户登陆  /user/:username post200    ok">
   
     <link rel="alternative" href="/atom.xml" title="YTY" type="application/atom+xml">
   
@@ -163,33 +159,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue组件中通讯" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-restful" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue组件间通讯
+      restful
     </h1>
   
 
         
-        <a href="/2019/04/28/vue组件中通讯/" class="archive-article-date">
-  	<time datetime="2019-04-28T15:11:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
+        <a href="/2019/06/30/restful/" class="archive-article-date">
+  	<time datetime="2019-06-30T13:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="父组件向子组件传递数据"><a href="#父组件向子组件传递数据" class="headerlink" title="父组件向子组件传递数据"></a>父组件向子组件传递数据</h2><blockquote>
-<p>通过设置标签的属性传递数据，在子组件用props接受。例如下面这样，父组件parent.vue引入子组件child.vue，将父组件的数据name通过设置标签child的name属性传递给子组件，子组件通过props传递接受，接受后，在子组件内this.name就是父组件的name数据。<br><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2051579444,1975337901&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=336&amp;s=E6F855CADEA1B364427D94190100C0C2" alt="enter image description here"></p>
+        <h2 id="api的restful设计原则"><a href="#api的restful设计原则" class="headerlink" title="api的restful设计原则"></a>api的restful设计原则</h2><p>crud和get post put delete对应关系</p>
+<blockquote>
+<p>c =》 get     查<br>r =》 post    增<br>u =》 put     更新<br>d =》 delete  删除</p>
 </blockquote>
-<h2 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h2><blockquote>
-<p>1.发布订阅 发布 emit 订阅 on{}<br>2.on订阅，emit发布，on和emit是在Vue的原型上的，每个实例都可以调用。<br>3.父亲绑定一个事件，儿子触发这个事件，并将参数传递过去<br><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2133644502,896555523&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=344&amp;s=DAB851CA1BE1B76C1EC9BC16030010C2" alt="enter image description here"><br><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2041020946,1230706412&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=449&amp;s=DEB651CADAEC836C1EC50C17010080C1" alt="enter image description here"></p>
+<p>####例子<br>创建用户</p>
+<blockquote>
+<p>/user  method post<br>201  创建成功<br>400 请求错误<br>500 服务器内部错误</p>
 </blockquote>
-<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>子组件和父组件之间同一数据不能双向同时绑定，这时候可以使用另外一个数据做同步即可</p>
+<p>用户登陆</p>
+<blockquote>
+<p>/user/:username post<br>200    ok<br>400    请求错误<br>500 服务器内部错误</p>
+</blockquote>
+<p>获取用户信息</p>
+<blockquote>
+<p>/user/:username get<br>200    ok<br>400     请求错误<br>401    用户认证失败<br>403  用户认证成功但是没有权限<br>500  服务器内部错误</p>
+</blockquote>
+<p>注销用户</p>
+<blockquote>
+<p>/user/:username delete<br>204    删除成功<br>400     请求错误<br>401    用户认证失败<br>403  用户认证成功但是没有权限<br>500  服务器内部错误</p>
+</blockquote>
 
       
 
@@ -224,7 +233,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
         		</li>
       		
 		</ul>
@@ -280,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/28/vue组件中通讯/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/30/restful/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +303,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/29/promise/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          javascript的Promise对象使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/06/14/sql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql语句使用记录</div>
       <i class="icon-circle-right"></i>
     </a>
   

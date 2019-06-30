@@ -156,6 +156,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-restful" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/restful/">restful</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/30/restful/" class="archive-article-date">
+  	<time datetime="2019-06-30T13:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="api的restful设计原则"><a href="#api的restful设计原则" class="headerlink" title="api的restful设计原则"></a>api的restful设计原则</h2><p>crud和get post put delete对应关系</p>
+<blockquote>
+<p>c =》 get     查<br>r =》 post    增<br>u =》 put     更新<br>d =》 delete  删除</p>
+</blockquote>
+<p>####例子<br>创建用户</p>
+<blockquote>
+<p>/user  method post<br>201  创建成功<br>400 请求错误<br>500 服务器内部错误</p>
+</blockquote>
+<p>用户登陆</p>
+<blockquote>
+<p>/user/:username post<br>200    ok<br>400    请求错误<br>500 服务器内部错误</p>
+</blockquote>
+<p>获取用户信息</p>
+<blockquote>
+<p>/user/:username get<br>200    ok<br>400     请求错误<br>401    用户认证失败<br>403  用户认证成功但是没有权限<br>500  服务器内部错误</p>
+</blockquote>
+<p>注销用户</p>
+<blockquote>
+<p>/user/:username delete<br>204    删除成功<br>400     请求错误<br>401    用户认证失败<br>403  用户认证成功但是没有权限<br>500  服务器内部错误</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">api</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/30/restful/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -860,15 +953,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">urls</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">urls</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
