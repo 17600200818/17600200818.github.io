@@ -177,8 +177,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="mysql修改数据库权限小记"><a href="#mysql修改数据库权限小记" class="headerlink" title="mysql修改数据库权限小记"></a>mysql修改数据库权限小记</h1><hr>
-<p><code>`</code> sql<br>grant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’;</p>
-<p>flush privileges;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">insert</span>,<span class="keyword">delete</span>,<span class="keyword">update</span>,<span class="keyword">select</span> <span class="keyword">on</span> database_name.* <span class="keyword">to</span> user_name@<span class="string">'user_ip'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'user_password'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br></pre></td></tr></table></figure>
 
       
 
