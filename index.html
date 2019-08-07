@@ -156,6 +156,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql-grand" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/07/mysql-grand/">mysql修改用户权限</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/07/mysql-grand/" class="archive-article-date">
+  	<time datetime="2019-08-07T07:58:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql修改数据库权限小记"><a href="#mysql修改数据库权限小记" class="headerlink" title="mysql修改数据库权限小记"></a>mysql修改数据库权限小记</h1><hr>
+<p><code>`</code> sql<br>grant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’;</p>
+<p>flush privileges;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/07/mysql-grand/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-upstream" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -863,86 +939,6 @@
 
 
   
-    <article id="post-vue组件中通讯" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/28/vue组件中通讯/">vue组件间通讯</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/28/vue组件中通讯/" class="archive-article-date">
-  	<time datetime="2019-04-28T15:11:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="父组件向子组件传递数据"><a href="#父组件向子组件传递数据" class="headerlink" title="父组件向子组件传递数据"></a>父组件向子组件传递数据</h2><blockquote>
-<p>通过设置标签的属性传递数据，在子组件用props接受。例如下面这样，父组件parent.vue引入子组件child.vue，将父组件的数据name通过设置标签child的name属性传递给子组件，子组件通过props传递接受，接受后，在子组件内this.name就是父组件的name数据。<br><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2051579444,1975337901&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=336&amp;s=E6F855CADEA1B364427D94190100C0C2" alt="enter image description here"></p>
-</blockquote>
-<h2 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h2><blockquote>
-<p>1.发布订阅 发布 emit 订阅 on{}<br>2.on订阅，emit发布，on和emit是在Vue的原型上的，每个实例都可以调用。<br>3.父亲绑定一个事件，儿子触发这个事件，并将参数传递过去<br><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2133644502,896555523&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=344&amp;s=DAB851CA1BE1B76C1EC9BC16030010C2" alt="enter image description here"><br><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2041020946,1230706412&amp;fm=173&amp;app=49&amp;f=JPEG?w=640&amp;h=449&amp;s=DEB651CADAEC836C1EC50C17010080C1" alt="enter image description here"></p>
-</blockquote>
-<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>子组件和父组件之间同一数据不能双向同时绑定，这时候可以使用另外一个数据做同步即可</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/28/vue组件中通讯/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1040,6 +1036,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">效率</a>
               </li>
              
@@ -1048,11 +1048,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">api</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">api</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">

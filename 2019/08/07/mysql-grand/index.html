@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>sql语句使用记录 | YTY</title>
+  <title>mysql修改用户权限 | YTY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ql语句记录写了一天sql，把一些之前用不到的sql语法记录下来，以免下次用去现查  字段contat 拼接字段或字符串substr() 截取字符串或某个字段  12concat(&apos;sns_live_p_&apos;, msg_id)substr(out_time, 1, 10)  时间操作now() 获取当前时间   格式为 Y-m-d H:i:sdate_sub() 对时间进行运算date_format">
+  <meta name="description" content="mysql修改数据库权限小记 ` sqlgrant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’; flush privileges;">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql语句使用记录">
-<meta property="og:url" content="http://yoursite.com/2019/06/14/sql/index.html">
+<meta property="og:title" content="mysql修改用户权限">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/mysql-grand/index.html">
 <meta property="og:site_name" content="YTY">
-<meta property="og:description" content="ql语句记录写了一天sql，把一些之前用不到的sql语法记录下来，以免下次用去现查  字段contat 拼接字段或字符串substr() 截取字符串或某个字段  12concat(&apos;sns_live_p_&apos;, msg_id)substr(out_time, 1, 10)  时间操作now() 获取当前时间   格式为 Y-m-d H:i:sdate_sub() 对时间进行运算date_format">
+<meta property="og:description" content="mysql修改数据库权限小记 ` sqlgrant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’; flush privileges;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-14T11:00:46.736Z">
+<meta property="og:updated_time" content="2019-08-07T08:04:15.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sql语句使用记录">
-<meta name="twitter:description" content="ql语句记录写了一天sql，把一些之前用不到的sql语法记录下来，以免下次用去现查  字段contat 拼接字段或字符串substr() 截取字符串或某个字段  12concat(&apos;sns_live_p_&apos;, msg_id)substr(out_time, 1, 10)  时间操作now() 获取当前时间   格式为 Y-m-d H:i:sdate_sub() 对时间进行运算date_format">
+<meta name="twitter:title" content="mysql修改用户权限">
+<meta name="twitter:description" content="mysql修改数据库权限小记 ` sqlgrant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’; flush privileges;">
   
     <link rel="alternative" href="/atom.xml" title="YTY" type="application/atom+xml">
   
@@ -158,50 +159,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sql" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql-grand" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      sql语句使用记录
+      mysql修改用户权限
     </h1>
   
 
         
-        <a href="/2019/06/14/sql/" class="archive-article-date">
-  	<time datetime="2019-06-14T10:35:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-14</time>
+        <a href="/2019/08/07/mysql-grand/" class="archive-article-date">
+  	<time datetime="2019-08-07T07:58:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ql语句记录<br>写了一天sql，把一些之前用不到的sql语法记录下来，以免下次用去现查</p>
-<blockquote>
-<p>字段<br>contat 拼接字段或字符串<br>substr() 截取字符串或某个字段</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">concat('sns_live_p_', msg_id)</span><br><span class="line">substr(out_time, 1, 10)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>时间操作<br>now() 获取当前时间   格式为 Y-m-d H:i:s<br>date_sub() 对时间进行运算<br>date_format() 对时间进行格式化</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date_format(date_sub(now(), interval 2 day), '%y-%m-%d')</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>case when then else end 示例</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">case when seq = 1 then 1 </span><br><span class="line">	when seq = 0 then 100</span><br><span class="line">	else seq <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>生成临时表</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> (</span><br><span class="line">	<span class="keyword">select</span> <span class="number">1</span> user_id, <span class="string">'aaa'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">	<span class="keyword">select</span> <span class="number">2</span> user_id, <span class="string">'bbb'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">	<span class="keyword">select</span> <span class="number">3</span> user_id, <span class="string">'ccc'</span> <span class="keyword">name</span> <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>梯形求和<br>场景：有一个每天的收入表，以日期为单位列出每个天手里算上这天之前的所有天的总和</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.date,a.money,<span class="keyword">SUM</span>(lt.money)  <span class="keyword">as</span> cum</span><br><span class="line"><span class="keyword">FROM</span> cum_demo a <span class="keyword">JOIN</span> cum_demo lt</span><br><span class="line"><span class="keyword">ON</span> a.date&gt;= lt.date</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.date</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> a.date</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>编写长的sql文件需要注意的事项<br>1:某些需要过滤的内容或者需要预先处理的字段最好在最底层的sql就给处理掉。因为放在外层处理可能会在某个块遗忘掉处理</p>
-</blockquote>
+        <h1 id="mysql修改数据库权限小记"><a href="#mysql修改数据库权限小记" class="headerlink" title="mysql修改数据库权限小记"></a>mysql修改数据库权限小记</h1><hr>
+<p><code>`</code> sql<br>grant insert,delete,update,select on database_name.* to user_name@’user_ip’ identified by ‘user_password’;</p>
+<p>flush privileges;</p>
 
       
 
@@ -210,6 +190,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -260,7 +251,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/14/sql/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/mysql-grand/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -274,18 +265,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/06/30/restful/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          restful
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/06/getSqlResult/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">爬虫小记-爬取sql查询平台sql执行结果</div>
+    <a href="/2019/07/24/upstream/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx添加代理简单示例</div>
       <i class="icon-circle-right"></i>
     </a>
   
